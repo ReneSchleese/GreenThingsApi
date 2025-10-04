@@ -1,13 +1,14 @@
 ﻿import express from "express";
 import fs from "fs";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const API_SECRET = process.env.API_SECRET;
 
 function checkAuthentication(req, res, next) {
     const clientSecret = req.header("x-api-key");
-    if (clientSecret !== API_SECRET) {
+    if (!clientSecret || clientSecret !== process.env.API_SECRET) {
         return res.status(401).json({ error: "Unauthorized" });
     }
     next();
