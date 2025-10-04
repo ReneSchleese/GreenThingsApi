@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ReneSchleese/GreenThingsApi/issues"
   },
-  "homepage": "https://github.com/ReneSchleese/GreenThingsApi#readme"
+  "homepage": "https://github.com/ReneSchleese/GreenThingsApi#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
