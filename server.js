@@ -3,11 +3,19 @@ import fs from "fs";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const API_SECRET = process.env.API_SECRET;
 
-// Serve static files from /public
-app.use("/files", express.static("public"));
+function checkAuthentication(req, res, next) {
+    const clientSecret = req.header("x-api-key");
+    if (clientSecret !== API_SECRET) {
+        return res.status(401).json({ error: "Unauthorized" });
+    }
+    next();
+}
 
-// JSON endpoint for metadata
+app.use("/api", checkAuthentication);
+app.use("/files", checkAuthentication, express.static("public"));
+
 app.get("/api/bottled-messages", (req, res) => {
     const data = JSON.parse(fs.readFileSync("./data/bottled-messages.json", "utf8"));
     res.json(data);
