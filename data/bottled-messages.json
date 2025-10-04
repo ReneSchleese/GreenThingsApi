@@ -1,2 +1,18 @@
-﻿{
-}
+﻿[
+  {
+    "title": "Sample Video",
+    "type": "video",
+    "url": "/files/video1.mp4",
+    "description": "A demo video file."
+  },
+  {
+    "title": "Background Music",
+    "type": "audio",
+    "url": "/files/audio1.mp3"
+  },
+  {
+    "title": "An Image",
+    "type": "image",
+    "url": "/files/image1.jpg"
+  }
+]
