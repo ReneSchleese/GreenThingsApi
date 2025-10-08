@@ -2,17 +2,23 @@
   {
     "title": "Sample Video",
     "type": "video",
+    "id": "sample-video",
+    "price": 30,
     "url": "/files/video1.mp4",
     "description": "A demo video file."
   },
   {
     "title": "Background Music",
     "type": "audio",
+    "id": "sample-audio",
+    "price": 15,
     "url": "/files/audio1.mp3"
   },
   {
     "title": "An Image",
     "type": "image",
+    "id": "sample-image",
+    "price": 10,
     "url": "/files/image1.jpg"
   }
 ]
